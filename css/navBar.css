@@ -1,0 +1,59 @@
+.navBar{
+  transition: 0.3s;
+  z-index: 100;
+
+  position: fixed;
+  top: 0px;
+  left: -180px;
+
+  width: 200px;
+  height: 100%;
+
+  background: black;
+
+  border-right: 3px solid yellowGreen;
+}
+.navBar:hover{
+  left: 0px;
+}
+
+.navBar > p{
+  color: yellowGreen;
+  font-size: 24px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.navBar > .cosmicBodys > a{
+  text-decoration: none;
+}
+.navBar > .cosmicBodys > a > p{
+  transition: 0.3s;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin: 10px auto;
+  user-select: none;
+}
+.navBar > .cosmicBodys > a > p:hover{
+  text-decoration: underline;
+  font-size: 24px;
+}
+.navBar > .cosmicBodys > a > p:active{
+  transition: 0s;
+  color: yellowGreen;
+}
+
+.navBar > .cosmicSpace{
+  display: grid;
+  align-items: center;
+}
+.navBar > .cosmicSpace > img{
+  transition: .3s;
+  margin: auto;
+  width: 75%;
+}
+.navBar > .cosmicSpace > img:hover{
+  width: 90%;
+  cursor: pointer;
+}
