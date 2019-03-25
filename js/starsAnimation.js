@@ -28,13 +28,15 @@ function DrawStarsAnimation() {
   ctx1.fillStyle = "black";
   ctx1.fill();
 
-  for (var i = 0; i < starsCount; i++) {
-    if (Math.random() < 0.001){
-      stars[i].ResetXY();
-      stars[i].Show();
-    }else{
-      stars[i].Update();
-      stars[i].Show();
+  if (isStarsVisible) {
+    for (var i = 0; i < starsCount; i++) {
+      if (Math.random() < 0.001){
+        stars[i].ResetXY();
+        stars[i].Show();
+      }else{
+        stars[i].Update();
+        stars[i].Show();
+      }
     }
   }
 
@@ -58,7 +60,7 @@ class Star {
   }
 
   Show() {
-    ctx1.fillStyle = `rgba(255, 255, 255, ${Math.sin(this.px * this.s / 2)})`;
+    ctx1.fillStyle = `rgba(255, 238, 200, ${Math.sin(this.px * this.s / 2)})`;
     ctx1.beginPath();
     ctx1.ellipse(this.px, this.py, this.s + 1, this.s + 1, 0, 0, 2 * Math.PI);
     ctx1.fill();
@@ -93,13 +95,22 @@ class Star {
 }
 
 let scroll = 0;
+let isStarsVisible = true;
 document.getElementsByClassName("solarSystem")[0].onscroll = function() {
-  let scrollNow = document.getElementsByClassName("solarSystem")[0].scrollTop;
-  let s = scroll > scrollNow ? -10 : 10;
-  scroll = scrollNow;
+  if (isStarsVisible) {
+    let scrollNow = document.getElementsByClassName("solarSystem")[0].scrollTop;
+    let s = scroll > scrollNow ? -10 : 10;
+    scroll = scrollNow;
 
-  for (var i = 0; i < starsCount; i++) {
-    stars[i].OnMouseScroll(s);
+    for (var i = 0; i < starsCount; i++) {
+      stars[i].OnMouseScroll(s);
+    }
+  }
+}
+document.getElementById("checkboxShowStars").oninput = function(){
+  isStarsVisible = document.getElementById("checkboxShowStars").checked;
+  if (isStarsVisible) {
+    backgroundColor = 1;
   }
 }
 

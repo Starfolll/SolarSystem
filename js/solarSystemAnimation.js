@@ -26,7 +26,6 @@ function SetupAnimationSolarSystem() {
 
   InitializeBodys();
   InitializeOrbits();
-  // SolarSystemGetPercentPosition(Math.random()*550390337+227939920)
 
   for (var i = 0; i < 100; i++) {
     let offX = (Math.random() - 0.5) * 2;
@@ -34,6 +33,8 @@ function SetupAnimationSolarSystem() {
     let radius = Math.sqrt((offX * offX) + (offY * offY));
     Asteroids[i] = new Asteroid(offX/radius * (Math.random() * 3 + 2), offY/radius * (Math.random() * 3 + 2), Math.random() * 10 + 5);
   }
+
+  document.getElementById("rangeCanvasZoom").oninput();
 
   requestAnimationFrame(UpdateAnimationSolarSystem);
 }
@@ -63,9 +64,6 @@ function InitializeBodys() {
 function UpdateAnimationSolarSystem() {
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
 
-  // let midW = canvas2.width / 2;
-  // let date = new Date() / 1000;
-  // let mercuryOffX = GetPlanetOffsetX(0);
   for (var i = 0; i < Asteroids.length; i++) {
     Asteroids[i].Show();
   }
@@ -200,21 +198,17 @@ class Asteroid {
     this.size = size;
     this.scale = 1;
     this.orbitId = 2;
+    this.image = document.getElementById(`img_asteroid_${(Math.random() * 3 + 2) | 0}`);
   }
 
   Show() {
-    ctx2.fillStyle = "white";
-    ctx2.beginPath();
     let addpx = GetPlanetOffsetX(this.orbitId);
-    ctx2.ellipse(
-      canvas2.width / 2 - this.px * addpx - this.scale / 2 * this.scale, // midW + Math.sin(date) * mercuryOffX,
+    ctx2.drawImage(
+      this.image,
+      canvas2.width / 2 - this.px * addpx - this.scale / 2 * this.scale,
       canvas2.height / 2 - this.py * addpx - this.scale / 2 * this.scale,
-      this.size/2 * this.scale,
-      this.size/2 * this.scale,
-      0,
-      0,
-      2 * Math.PI);
-    ctx2.fill();
+      this.size/1.3 * this.scale,
+      this.size/1.3 * this.scale);
   }
 }
 

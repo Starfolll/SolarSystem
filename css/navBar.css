@@ -50,9 +50,11 @@
 .navBar > .cosmicSpace > img{
   transition: .3s;
   margin: auto;
-  width: 75%;
+  margin-top: 40px;
+  width: 100px;
 }
 .navBar > .cosmicSpace > img:hover{
-  width: 90%;
+  margin-top: 27.5px;
+  width: 125px;
   cursor: pointer;
 }

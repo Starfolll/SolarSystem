@@ -15,6 +15,22 @@
     <link rel="stylesheet" href="css/actionBar.css">
     <link rel="stylesheet" href="css/solarSystem.css">
     <link rel="stylesheet" href="css/navBar.css">
+
+    <!-- images -->
+    <div style="visibility: hidden; position:fixed">
+      <img id="img_sun" src="icons/sun.svg">
+      <img id="img_jupiter" src="icons/jupiter.svg">
+      <img id="img_mars" src="icons/mars.svg">
+      <img id="img_mercury" src="icons/mercury.svg">
+      <img id="img_neptune" src="icons/neptune.svg">
+      <img id="img_saturn" src="icons/saturn.svg">
+      <img id="img_earth" src="icons/planet-earth.svg">
+      <img id="img_uranus" src="icons/uranus.svg">
+      <img id="img_venus" src="icons/venus.svg">
+      <img id="img_asteroid_2" src="icons/asteroid_2.svg">
+      <img id="img_asteroid_3" src="icons/asteroid_3.svg">
+      <img id="img_asteroid_4" src="icons/asteroid_4.svg">
+    </div>
   </head>
   <body>
     <!-- solar system -->
@@ -267,36 +283,20 @@
           <p>Neptune</p>
         </a>
       </div>
-
-      <div id="ButtonShowCosmicSpace" class="cosmicSpace">
-        <img src="icons/solar-system.svg">
-      </div>
     </div>
 
     <!-- action bar solar system -->
     <div id="actionBar" class="actionBar" style="visibility: hidden;">
-      <hr><hr>
-      <p><u>Actions</u></p>
-      <hr><hr>
+      <hr>
       <p>Zoom</p>
-      <input id="rangeCanvasZoom" type="range" min="0.01" max="1.5" value="1" step="0.001">
+      <input id="rangeCanvasZoom" type="range" min="0.01" max="1.5" value="0.143" step="0.001">
       <hr>
       <p>Show names</p>
       <input id="checkboxShowNames" type="checkbox">
       <hr>
-    </div>
-
-    <!-- images -->
-    <div style="visibility: hidden; position:fixed">
-      <img id="img_sun" src="icons/sun.svg">
-      <img id="img_jupiter" src="icons/jupiter.svg">
-      <img id="img_mars" src="icons/mars.svg">
-      <img id="img_mercury" src="icons/mercury.svg">
-      <img id="img_neptune" src="icons/neptune.svg">
-      <img id="img_saturn" src="icons/saturn.svg">
-      <img id="img_earth" src="icons/planet-earth.svg">
-      <img id="img_uranus" src="icons/uranus.svg">
-      <img id="img_venus" src="icons/venus.svg">
+      <p>Show stars</p>
+      <input id="checkboxShowStars" checked="true" type="checkbox">
+      <hr>
     </div>
 
     <!-- scripts -->

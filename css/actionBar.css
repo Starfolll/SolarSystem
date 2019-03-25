@@ -13,6 +13,7 @@
   border-left: 3px solid yellowGreen;
 
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .actionBar:hover{
   right: 0px;
