@@ -1,0 +1,55 @@
+.actionBar{
+  transition: 0.3s;
+  z-index: 10;
+
+  width: 300px;
+  height: 100vh;
+
+  position: fixed;
+  top: 0px;
+  right: -280px;
+
+  background: rgba(0,0,0,0.3);
+  border-left: 3px solid yellowGreen;
+
+  overflow-y: scroll;
+}
+.actionBar:hover{
+  right: 0px;
+}
+.actionBar::-webkit-scrollbar {
+  width: 5px;
+}
+.actionBar::-webkit-scrollbar-track {
+  background: black;
+}
+.actionBar::-webkit-scrollbar-thumb {
+  background: yellowGreen;
+}
+.actionBar::-webkit-scrollbar-thumb:hover {
+  background: var(--conteier);
+}
+
+.actionBar > p{
+  color: white;
+  margin: 5px;
+  width: auto;
+
+  font-size: 24px;
+  text-align: center;
+}
+.actionBar > hr{
+  width: calc(100% - 40px);
+  margin: 10px auto;
+  border: 1px solid yellowGreen;
+  background: yellowGreen;
+}
+.actionBar > input[type="range"]{
+  margin: 0px 20px;
+  width: calc(100% - 40px);
+}
+.actionBar > input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+  margin-left: calc(50% - 10px);
+}

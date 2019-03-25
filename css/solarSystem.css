@@ -42,6 +42,9 @@
   text-shadow: 2px 2px black;
 }
 
+.solarSystem > .cosmicBody > img{
+  opacity: 0.8;
+}
 .solarSystem > .cosmicBody > .sun{
   width: 100vh;
 }

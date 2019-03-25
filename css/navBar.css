@@ -33,7 +33,6 @@
   color: white;
   font-size: 18px;
   margin: 10px auto;
-  user-select: none;
 }
 .navBar > .cosmicBodys > a > p:hover{
   text-decoration: underline;

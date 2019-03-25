@@ -60,7 +60,7 @@ class Star {
   Show() {
     ctx1.fillStyle = `rgba(255, 255, 255, ${Math.sin(this.px * this.s / 2)})`;
     ctx1.beginPath();
-    ctx1.ellipse(this.px, this.py, this.s + 0.5, this.s + 0.5, 0, 0, 2 * Math.PI);
+    ctx1.ellipse(this.px, this.py, this.s + 1, this.s + 1, 0, 0, 2 * Math.PI);
     ctx1.fill();
   }
 

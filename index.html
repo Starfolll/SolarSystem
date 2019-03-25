@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <!-- http://cosinekitty.com/solar_system.html -->
+  <!-- http://cosinekitty.com/astronomy.js -->
   <head>
     <meta charset="utf-8">
     <title>Solar system</title>
@@ -10,6 +12,7 @@
 
     <!-- css styles -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/actionBar.css">
     <link rel="stylesheet" href="css/solarSystem.css">
     <link rel="stylesheet" href="css/navBar.css">
   </head>
@@ -157,7 +160,7 @@
         <div class="distance">
           <hr class="hr1">
           <hr class="hr2">
-          <p>779`699`729 km</p>
+          <p>591`889`471 km</p>
           <hr class="hr2">
           <hr class="hr1">
         </div>
@@ -268,6 +271,19 @@
       <div id="ButtonShowCosmicSpace" class="cosmicSpace">
         <img src="icons/solar-system.svg">
       </div>
+    </div>
+
+    <!-- action bar solar system -->
+    <div id="actionBar" class="actionBar" style="visibility: hidden;">
+      <hr><hr>
+      <p><u>Actions</u></p>
+      <hr><hr>
+      <p>Zoom</p>
+      <input id="rangeCanvasZoom" type="range" min="0.01" max="1.5" value="1" step="0.001">
+      <hr>
+      <p>Show names</p>
+      <input id="checkboxShowNames" type="checkbox">
+      <hr>
     </div>
 
     <!-- images -->

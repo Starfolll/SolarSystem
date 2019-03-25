@@ -1,8 +1,10 @@
 let DivSolarSystem;
 let SolarSystemCanvas;
+let DivActionBar;
 
 window.onload = function(){
   DivSolarSystem = document.getElementById("divSolarSystem");
+  DivActionBar = document.getElementById("actionBar");
   SolarSystemCanvas = document.getElementById("solarSystemCanvas");
 }
 
@@ -23,9 +25,11 @@ document.getElementById("ButtonShowCosmicSpace").onclick = function(){
   isShowSpace = !isShowSpace;
   if (isShowSpace) {
     DivSolarSystem.style.visibility = null;
+    DivActionBar.style.visibility = "hidden";
     SolarSystemCanvas.style.visibility = "hidden";
   }else{
     SolarSystemCanvas.style.visibility = null;
+    DivActionBar.style.visibility = null;
     DivSolarSystem.style.visibility = "hidden";
   }
 }

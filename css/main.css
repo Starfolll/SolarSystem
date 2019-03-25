@@ -1,6 +1,6 @@
 *{
   font-family: 'Raleway', sans-serif;
-
+  user-select: none;
   padding: 0px;
   margin: 0px;
 }
