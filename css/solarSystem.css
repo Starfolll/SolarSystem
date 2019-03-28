@@ -1,0 +1,151 @@
+.solarSystem{
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.solarSystem::-webkit-scrollbar {
+  width: 5px;
+}
+.solarSystem::-webkit-scrollbar-track {
+  background: black;
+}
+.solarSystem::-webkit-scrollbar-thumb {
+  background: yellowGreen;
+}
+.solarSystem::-webkit-scrollbar-thumb:hover {
+  background: var(--conteier);
+}
+
+.solarSystem > .cosmicBody{
+  display: grid;
+  grid-template-areas: "I";
+  justify-content: center;
+  align-content: center;
+
+  height: 100vh;
+  width: 100%;
+}
+.solarSystem > .cosmicBody > *{
+  grid-area: I;
+  margin: auto;
+}
+.solarSystem > .cosmicBody > p{
+  z-index: 2;
+  color: white;
+  margin: auto;
+  font-size: 42px;
+  text-shadow: 2px 2px black;
+}
+
+.solarSystem > .cosmicBody > img{
+  opacity: 0.9;
+}
+.solarSystem > .cosmicBody > .sun{
+  width: 100vh;
+}
+.solarSystem > .cosmicBody > .mercury{
+  width: 35vh;
+  transform: rotate(-90deg);
+}
+.solarSystem > .cosmicBody > .venus{
+  width: 40vh;
+}
+.solarSystem > .cosmicBody > .earth{
+  width: 45vh;
+  transform: rotate(90deg);
+}
+.solarSystem > .cosmicBody > .mars{
+  width: 30vh;
+  transform: rotate(-45deg);
+}
+.solarSystem > .cosmicBody > .asteroids{
+  width: 90%;
+  filter: brightness(2);
+}
+.solarSystem > .cosmicBody > .jupiter{
+  width: 75vh;
+  transform: rotate(-90deg);
+}
+.solarSystem > .cosmicBody > .saturn{
+  width: 80vh;
+}
+.solarSystem > .cosmicBody > .uranus{
+  width: 30vh;
+  transform: rotate(90deg);
+}
+.solarSystem > .cosmicBody > .neptune{
+  width: 40vh;
+  filter: blur(1px);
+  transform: rotate(45deg);
+}
+
+.solarSystem > .cosmicBody > .moon{
+  width: 15vh;
+  transform: translateX(20vw);
+}
+.solarSystem > .cosmicBody > .moon_p{
+  font-size: 24px;
+  transform: translateX(20vw);
+}
+
+.solarSystem > .cosmicBodyInfo{
+  height: auto;
+  width: 100%;
+
+  display: grid;
+  grid-template-areas:
+    "bodyInfo distance .";
+
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  justify-content: center;
+  align-content: center;
+}
+
+.solarSystem > .cosmicBodyInfo > .bodyInfo{
+  grid-area: bodyInfo;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  margin: 50px;
+}
+.solarSystem > .cosmicBodyInfo > .bodyInfo > p{
+  font-size: 24px;
+  color: white;
+  margin: 5px;
+  text-align: center;
+}
+
+.solarSystem > .cosmicBodyInfo > .distance{
+  grid-area: distance;
+
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-rows: 4px 1fr auto 1fr 4px;
+}
+.solarSystem > .cosmicBodyInfo > .distance > p{
+  font-size: 32px;
+  color: white;
+  margin: 5px;
+}
+.solarSystem > .cosmicBodyInfo > .distance > .hr1{
+  width: 50px;
+  margin: auto;
+  background: var(--distanceHr);
+  border-radius: 5px;
+  border: 2px solid var(--distanceHr);
+}
+.solarSystem > .cosmicBodyInfo > .distance > .hr2{
+  width: 0px;
+  margin: 0 auto;
+  background: var(--distanceHr);
+  border: 2px solid var(--distanceHr);
+}
