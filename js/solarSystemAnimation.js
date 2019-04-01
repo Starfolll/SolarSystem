@@ -193,7 +193,15 @@ function SetTargetedPlanet(planetName){
 }
 
 document.getElementById("inputAddedDay").oninput = function(){
-  dateOff = document.getElementById("inputAddedDay").value / 100;
+  let date = document.getElementById("inputAddedDay");
+
+  let year = date[0];
+  let month = date[1];
+  let day = date[2];
+
+  let dateNow = new Date();
+
+  dateOff = +year;
 }
 
 class CosmicBody{

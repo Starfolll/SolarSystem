@@ -106,6 +106,8 @@ document.getElementsByClassName("solarSystem")[0].onscroll = function() {
       stars[i].OnMouseScroll(s);
     }
   }
+
+
 }
 document.getElementById("checkboxShowStars").oninput = function(){
   isStarsVisible = document.getElementById("checkboxShowStars").checked;

@@ -11,7 +11,9 @@
 
   background: black;
 
-  border-right: 3px solid yellowGreen;
+  border-width: 0px 3px 0px 0px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, yellowGreen, red) 1 100%;
 }
 .navBar:hover{
   left: 0px;
