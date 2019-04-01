@@ -37,6 +37,7 @@ function SetupAnimationSolarSystem() {
 
   InitializeBodys();
   InitializeActions();
+  InitializeTargetPlanets();
 
   requestAnimationFrame(UpdateAnimationSolarSystem);
 }
@@ -71,6 +72,17 @@ function InitializeActions(){
     showName = boxShowNames.checked;
   }
 }
+function InitializeTargetPlanets(){
+  document.getElementById("target_sun").onclick = function(){SetTargetedPlanet("sun")};
+  document.getElementById("target_mercury").onclick = function(){SetTargetedPlanet("mercury")};
+  document.getElementById("target_venus").onclick = function(){SetTargetedPlanet("venus")};
+  document.getElementById("target_earth").onclick = function(){SetTargetedPlanet("earth")};
+  document.getElementById("target_mars").onclick = function(){SetTargetedPlanet("mars")};
+  document.getElementById("target_jupiter").onclick = function(){SetTargetedPlanet("jupiter")};
+  document.getElementById("target_saturn").onclick = function(){SetTargetedPlanet("saturn")};
+  document.getElementById("target_uaranus").onclick = function(){SetTargetedPlanet("uranus")};
+  document.getElementById("target_neptune").onclic = function(){SetTargetedPlanet("neptune")};
+}
 
 function UpdateAnimationSolarSystem() {
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
@@ -97,22 +109,58 @@ function ShowPlanets(){
   let earthX = Math.sin(date/67 + dateOff) * Earth.planetOffsetX * planetsAddPosition;
   let earthY = Math.cos(date/67 + dateOff) * Earth.planetOffsetX * planetsAddPosition;
 
-  let marsX = Math.sin(date/90) * Mars.planetOffsetX * planetsAddPosition;
-  let marsY = Math.cos(date/90) * Mars.planetOffsetX * planetsAddPosition;
+  let marsX = Math.sin(date/90 + dateOff) * Mars.planetOffsetX * planetsAddPosition;
+  let marsY = Math.cos(date/90 + dateOff) * Mars.planetOffsetX * planetsAddPosition;
 
-  let jupiterX = Math.sin(date/78) * Jupiter.planetOffsetX * planetsAddPosition;
-  let jupiterY = Math.cos(date/78) * Jupiter.planetOffsetX * planetsAddPosition;
+  let jupiterX = Math.sin(date/78 + dateOff) * Jupiter.planetOffsetX * planetsAddPosition;
+  let jupiterY = Math.cos(date/78 + dateOff) * Jupiter.planetOffsetX * planetsAddPosition;
 
-  let saturnX = Math.sin(date/68) * Saturn.planetOffsetX * planetsAddPosition;
-  let saturnY = Math.cos(date/68) * Saturn.planetOffsetX * planetsAddPosition;
+  let saturnX = Math.sin(date/68 + dateOff) * Saturn.planetOffsetX * planetsAddPosition;
+  let saturnY = Math.cos(date/68 + dateOff) * Saturn.planetOffsetX * planetsAddPosition;
 
-  let neptuneX = Math.sin(date/150) * Neptune.planetOffsetX * planetsAddPosition;
-  let neptuneY = Math.cos(date/150) * Neptune.planetOffsetX * planetsAddPosition;
+  let neptuneX = Math.sin(date/150 + dateOff) * Neptune.planetOffsetX * planetsAddPosition;
+  let neptuneY = Math.cos(date/150 + dateOff) * Neptune.planetOffsetX * planetsAddPosition;
 
-  let uranusX = Math.sin(date/500) * Uranus.planetOffsetX * planetsAddPosition;
-  let uranusY = Math.cos(date/500) * Uranus.planetOffsetX * planetsAddPosition;
+  let uranusX = Math.sin(date/500 + dateOff) * Uranus.planetOffsetX * planetsAddPosition;
+  let uranusY = Math.cos(date/500 + dateOff) * Uranus.planetOffsetX * planetsAddPosition;
 
-  SetTargetedPlanet();
+  switch (pointPlanet) {
+    case "mercury":
+      centerX = mercuryX;
+      centerY = mercuryY;
+      break;
+    case "venus":
+      centerX = venusX;
+      centerY = venusY;
+      break;
+    case "earth":
+      centerX = earthX;
+      centerY = earthY;
+      break;
+    case "mars":
+      centerX = marsX;
+      centerY = marsY;
+      break;
+    case "jupiter":
+      centerX = jupiterX;
+      centerY = jupiterY;
+      break;
+    case "saturn":
+      centerX = saturnX;
+      centerY = saturnY;
+      break;
+    case "uranus":
+      centerX = uranusX;
+      centerY = uranusY;
+      break;
+    case "neptune":
+      centerX = neptuneX;
+      centerY = neptuneY;
+      break;
+    default:
+      centerX = 0;
+      centerY = 0;
+  }
 
   Sun.Show(cW, cH);
 
@@ -140,28 +188,8 @@ function ShowPlanets(){
   Uranus.ShowEllipse(planetsOffMult);
   Uranus.Show(cW + uranusX, cH + uranusY);
 }
-function SetTargetedPlanet(){
-  switch (pointPlanet) {
-    case "mercury":
-      break;
-    case "venus":
-      break;
-    case "earth":
-      break;
-    case "mars":
-      break;
-    case "jupiter":
-      break;
-    case "saturn":
-      break;
-    case "uranus":
-      break;
-    case "neptune":
-      break;
-    default:
-      centerX = 0;
-      centerY = 0;
-  }
+function SetTargetedPlanet(planetName){
+  pointPlanet = planetName;
 }
 
 document.getElementById("inputAddedDay").oninput = function(){

@@ -45,7 +45,7 @@
   border: 1px solid yellowGreen;
   background: yellowGreen;
 }
-.actionBar > input[type="range"]{
+.actionBar > input[type="number"]{
   margin: 0px 20px;
   width: calc(100% - 40px);
 }
