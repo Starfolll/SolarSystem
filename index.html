@@ -272,7 +272,7 @@
         <a id="target_mars" href="#mars">
           <p>Mars</p>
         </a>
-        <a href="#asteroids">
+        <a id="target_asteroids" href="#asteroids">
           <p>Asteroids</p>
         </a>
         <a id="target_jupiter" href="#jupiter">
@@ -299,8 +299,10 @@
       <p>Show stars</p>
       <input id="checkboxShowStars" checked="true" type="checkbox">
       <hr>
-      <p>Date</p>
-      <input id="inputAddedDay" type="date" name="" value="">
+      <button type="button" onclick="SetTargetedPlanet('comet')">Target comet</button>
+      <!-- <hr>
+      <p>Days offset</p>
+      <input id="date_off" type="number"> -->
     </div>
 
     <!-- scripts -->

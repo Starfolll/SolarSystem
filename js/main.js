@@ -4,7 +4,7 @@ let SolarSystemBackground;
 let DivActionBar;
 
 let isShowSpace = true;
-window.onload = function(){
+window.onload = function() {
   DivSolarSystem = document.getElementById("divSolarSystem");
   DivActionBar = document.getElementById("actionBar");
   SolarSystemBackground = document.getElementById("solarSystemBackground");
@@ -13,27 +13,34 @@ window.onload = function(){
   CreateImageShowSolarSystem();
 }
 
-function CreateImageShowSolarSystem(){
-  if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+function CreateImageShowSolarSystem() {
+  if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
     let div = document.createElement("DIV");
     div.setAttribute("class", "cosmicSpace");
 
     let img = document.createElement("img");
     img.setAttribute("src", "icons/planet-earth.svg");
-    img.onclick = function(){
+    img.onclick = function() {
       isShowSpace = !isShowSpace;
       if (isShowSpace) {
         DivSolarSystem.style.visibility = null;
         DivActionBar.style.visibility = "hidden";
         SolarSystemCanvas.style.visibility = "hidden";
+
+        console.log(document.getElementById("target_asteroids").visibility);
+        document.getElementById("target_asteroids").visibility = "hidden";
+        console.log(document.getElementById("target_asteroids").visibility);
+
         let checbox = document.getElementById("checkboxShowStars");
-        if(!checbox.checked){
+        if (!checbox.checked) {
           document.getElementById("checkboxShowStars").click();
         }
-      }else{
+      } else {
         SolarSystemCanvas.style.visibility = null;
         DivActionBar.style.visibility = null;
         DivSolarSystem.style.visibility = "hidden";
+
+        document.getElementById("target_asteroids").visibility = null;
       }
     }
 
@@ -42,7 +49,7 @@ function CreateImageShowSolarSystem(){
   }
 }
 
-window.onresize = function(){
+window.onresize = function() {
   canvas1.width = window.innerWidth;
   canvas1.height = window.innerHeight;
   canvas2.width = window.innerWidth;

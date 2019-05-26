@@ -96,7 +96,7 @@
 }
 
 .solarSystem > .cosmicBodyInfo{
-  height: 100vh;
+  height: auto;
   width: 100%;
 
   display: grid;
